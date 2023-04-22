@@ -7,4 +7,9 @@ class Client {
 
   Client(
       this.nom, this.prenom, this.tel, this.email, this.dateNaiss, this.compte);
+
+  Compte creercompte(TypeCompte typeCompte) {
+    Compte compte = Compte(this, typeCompte);
+    return compte;
+  }
 }

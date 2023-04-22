@@ -7,10 +7,10 @@ class Compte {
   static int compteur = 0;
   double solde = 0;
   DateTime? dateCrea;
-  TypeCompte type;
+  TypeCompte? typeCompte;
   Client client;
 
-  Compte(this.client, this.type) {
+  Compte(this.client, this.typeCompte) {
     this.numCpt;
     if (compteur < 1000) {
       compteur++;
