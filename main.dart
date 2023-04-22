@@ -54,20 +54,26 @@ afficherMenu() {
 }
 
 ajouterClient() {
+  Client clt = Client.SP();
   print("Entrer votre nom");
   String nom = stdin.readLineSync()!.toString();
+  clt.nom = nom;
   print("Entrer votre prenom");
   String prenom = stdin.readLineSync()!.toString();
+  clt.prenom = prenom;
   print("Entrer votre date de naissance (aaaa-mm-jj):");
   DateTime date_naiss = DateTime.parse(stdin.readLineSync().toString());
+  clt.dateNaiss = date_naiss;
   print("Entrer votre Numero de téléphone ");
   String tel = (stdin.readLineSync().toString());
+  clt.tel = tel;
   print("Entrer votre addresse mail");
   String email = stdin.readLineSync().toString();
-
+  clt.email = email;
   print("Quel type de compte voulez-vous créer(1-EPARGNE;2-COURANT)");
   int typeC = int.parse(stdin.readLineSync()!);
   TypeCompte type = TypeCompte.values.elementAt(typeC - 1);
+  clt.creercompte(type);
 }
 
 listerClient() {
